@@ -47,6 +47,6 @@ class File:
 				os.mkdir(created_path)
 		
 		try:
-			subprocess.call("mv " + self.t3x() + " " + real_path + ".t3x", shell=True)
+			os.rename(self.t3x(), real_path + ".t3x")
 		except subprocess.CalledProcessError:
 			raise FileNotFoundError
